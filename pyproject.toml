@@ -1,0 +1,38 @@
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "scrapper_Rijin222001"
+version = "0.0.1"
+dynamic = ["version"]
+authors = [
+  { name="Rijin", email="rijinraj856@gmail.com" },
+]
+description = "A package for web scraping with some extra features."
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+"beautifulsoup4==4.12.3",
+"bs4==0.0.2",
+"certifi==2024.2.2",
+"charset-normalizer==3.3.2",
+"idna==3.6",
+"pycodestyle==2.11.1",
+"requests==2.31.0",
+"soupsieve==2.5",
+"urllib3==2.2.1"
+]
+
+keywords = ["scraping", "scraper", "website scraper", "scheduler"]
+[project.urls]
+Homepage = "https://github.com/RijinRaju/Tools/tree/main/scrapper"
+Issues = "https://github.com/RijinRaju/Tools/issues"
