@@ -5,9 +5,8 @@ build-backend = "hatchling.build"
 
 
 [project]
-name = "scrapper_Rijin222001"
+name = "scraperOne"
 version = "0.0.1"
-dynamic = ["version"]
 authors = [
   { name="Rijin", email="rijinraj856@gmail.com" },
 ]
@@ -34,5 +33,8 @@ dependencies = [
 
 keywords = ["scraping", "scraper", "website scraper", "scheduler"]
 [project.urls]
-Homepage = "https://github.com/RijinRaju/Tools/tree/main/scrapper"
-Issues = "https://github.com/RijinRaju/Tools/issues"
+Homepage = "https://github.com/RijinRaju/ScraperOne"
+Issues = "https://github.com/RijinRaju/ScraperOne/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
