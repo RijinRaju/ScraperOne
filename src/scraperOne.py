@@ -1,4 +1,3 @@
-
 import requests
 from bs4 import BeautifulSoup
 import sched
@@ -11,11 +10,12 @@ scrapper parent class
 make an object of Scraper class and pass the url
 call the run function 
 """
-class Scraper:
+class ScraperOne:
 
     def __init__(self, url) -> None:
         self.URL = url
         self.content = self.run()
+        self.scedContent = None
 
 
     """
@@ -25,9 +25,10 @@ class Scraper:
     def run(self):
 
         try:
-
+            print('exicuting the run method..', self.URL)
             request = requests.get(self.URL)
             soup = BeautifulSoup(request.content, 'html.parser')
+            self.scedContent = soup
             return soup
 
         # handle any errors happen
@@ -51,18 +52,14 @@ class Scraper:
             return e
 
 
-
     """
     this function is used for scheduling the scraping for 
     a particular interval of time period.
     """
-    def sceduler(self, url):
+    def sceduler(self,delay_time,priority):
+        scedData = ''
         sced = sched.scheduler(time.time, time.sleep)
-        sced.enter(delay=,priority=,run)
+        sced.enter(delay= delay_time, priority= priority , action = self.run())
         sced.run()
+        return self.scedContent
 
-
-
-scrapper = Scraper("https://tryhackme.com/paths")
-
-print(scrapper.get_tag_content('div',{'class':'mt-3 size-16 faded'}))
