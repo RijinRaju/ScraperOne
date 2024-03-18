@@ -6,7 +6,7 @@ import time
 
 
 """
-scrapper parent class
+scraper parent class
 make an object of Scraper class and pass the url
 call the run function 
 """
@@ -57,7 +57,7 @@ class ScraperOne:
     a particular interval of time period.
     """
     def sceduler(self,delay_time,priority):
-        scedData = ''
+    
         sced = sched.scheduler(time.time, time.sleep)
         sced.enter(delay= delay_time, priority= priority , action = self.run())
         sced.run()
